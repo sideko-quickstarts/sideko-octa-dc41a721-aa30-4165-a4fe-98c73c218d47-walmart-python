@@ -1,4 +1,3 @@
-
 import pytest
 
 from sideko_octa_api_64_py import AsyncClient, Client
@@ -26,9 +25,55 @@ def test_create_200_success_all_params():
     """
     # tests calling sync method with example data
     client = Client(environment=Environment.MOCK_SERVER)
-    response=client.v3.ca.orders.refund.create(wm_consumer_channel_type="string", wm_consumer_id="Get the Consumer ID from Developer Center after logging in", wm_qos_correlation_id="b3261d2d-028a-4ef7-8602-633c23200af6", wm_sec_auth_signature="9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg=", wm_sec_timestamp="1443748249449", wm_svc_name="Walmart Service Name", order_lines={"order_line": [{"line_number": "string", "refunds": {"refund": [{"refund_charges": {"refund_charge": [{"charge": {"charge_amount": {"amount": 123.45, "currency": "AED"}, "charge_name": "string", "charge_type": "string", "tax": {"tax_amount": {"amount": 123.45, "currency": "AED"}, "tax_name": "string"}}, "refund_reason": "BillingError"}]}, "refund_comments": "string", "refund_id": "string"}]}}]}, purchase_order_id="string", purchase_order_id="string")
+    response = client.v3.ca.orders.refund.create(
+        wm_consumer_channel_type="string",
+        wm_consumer_id="Get the Consumer ID from Developer Center after logging in",
+        wm_qos_correlation_id="b3261d2d-028a-4ef7-8602-633c23200af6",
+        wm_sec_auth_signature="9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg=",
+        wm_sec_timestamp="1443748249449",
+        wm_svc_name="Walmart Service Name",
+        order_lines={
+            "order_line": [
+                {
+                    "line_number": "string",
+                    "refunds": {
+                        "refund": [
+                            {
+                                "refund_charges": {
+                                    "refund_charge": [
+                                        {
+                                            "charge": {
+                                                "charge_amount": {
+                                                    "amount": 123.45,
+                                                    "currency": "AED",
+                                                },
+                                                "charge_name": "string",
+                                                "charge_type": "string",
+                                                "tax": {
+                                                    "tax_amount": {
+                                                        "amount": 123.45,
+                                                        "currency": "AED",
+                                                    },
+                                                    "tax_name": "string",
+                                                },
+                                            },
+                                            "refund_reason": "BillingError",
+                                        }
+                                    ]
+                                },
+                                "refund_comments": "string",
+                                "refund_id": "string",
+                            }
+                        ]
+                    },
+                }
+            ]
+        },
+        purchase_order_id="string",
+    )
     is_valid_binary = isinstance(response, BinaryResponse)
     assert is_valid_binary, "failed response type check"
+
 
 @pytest.mark.asyncio
 async def test_await_create_200_success_all_params():
@@ -51,6 +96,51 @@ async def test_await_create_200_success_all_params():
     """
     # tests calling async method with example data
     client = AsyncClient(environment=Environment.MOCK_SERVER)
-    response=await client.v3.ca.orders.refund.create(wm_consumer_channel_type="string", wm_consumer_id="Get the Consumer ID from Developer Center after logging in", wm_qos_correlation_id="b3261d2d-028a-4ef7-8602-633c23200af6", wm_sec_auth_signature="9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg=", wm_sec_timestamp="1443748249449", wm_svc_name="Walmart Service Name", order_lines={"order_line": [{"line_number": "string", "refunds": {"refund": [{"refund_charges": {"refund_charge": [{"charge": {"charge_amount": {"amount": 123.45, "currency": "AED"}, "charge_name": "string", "charge_type": "string", "tax": {"tax_amount": {"amount": 123.45, "currency": "AED"}, "tax_name": "string"}}, "refund_reason": "BillingError"}]}, "refund_comments": "string", "refund_id": "string"}]}}]}, purchase_order_id="string", purchase_order_id="string")
+    response = await client.v3.ca.orders.refund.create(
+        wm_consumer_channel_type="string",
+        wm_consumer_id="Get the Consumer ID from Developer Center after logging in",
+        wm_qos_correlation_id="b3261d2d-028a-4ef7-8602-633c23200af6",
+        wm_sec_auth_signature="9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg=",
+        wm_sec_timestamp="1443748249449",
+        wm_svc_name="Walmart Service Name",
+        order_lines={
+            "order_line": [
+                {
+                    "line_number": "string",
+                    "refunds": {
+                        "refund": [
+                            {
+                                "refund_charges": {
+                                    "refund_charge": [
+                                        {
+                                            "charge": {
+                                                "charge_amount": {
+                                                    "amount": 123.45,
+                                                    "currency": "AED",
+                                                },
+                                                "charge_name": "string",
+                                                "charge_type": "string",
+                                                "tax": {
+                                                    "tax_amount": {
+                                                        "amount": 123.45,
+                                                        "currency": "AED",
+                                                    },
+                                                    "tax_name": "string",
+                                                },
+                                            },
+                                            "refund_reason": "BillingError",
+                                        }
+                                    ]
+                                },
+                                "refund_comments": "string",
+                                "refund_id": "string",
+                            }
+                        ]
+                    },
+                }
+            ]
+        },
+        purchase_order_id="string",
+    )
     is_valid_binary = isinstance(response, BinaryResponse)
     assert is_valid_binary, "failed response type check"
